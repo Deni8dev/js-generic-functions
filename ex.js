@@ -60,4 +60,4 @@ const isPrime = number => {
       return false
   return true
 }
-console.log(isPrime(4))
+console.log(isPrime(53))

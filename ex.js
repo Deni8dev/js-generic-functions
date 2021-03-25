@@ -48,3 +48,16 @@ const isPalindrome = str =>
       .reverse()
       .join('')
 console.log(isPalindrome('Do geese see God'))
+
+const isPrime = number => {
+  if (number <= 1)
+    return false
+  if (number === 2)
+    return true
+
+  for (let i = 2; i < number; i++)
+    if (number % i === 0)
+      return false
+  return true
+}
+console.log(isPrime(4))

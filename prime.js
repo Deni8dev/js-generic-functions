@@ -6,7 +6,7 @@ const _isPrime = number => {
 }
 
 const isPrime = number => {
-  if (number <= 1)
+  if (isNaN(number) || number <= 1)
     return false
   if (number === 2)
     return true

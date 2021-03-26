@@ -1,50 +1,26 @@
+require('./extrafun')
+
 const multiply = (a, b) => {
-   let result = 0
-   const positive = Math.abs(b) === b
-   for (let i = 0; i < Math.abs(b); i++) {
-      result = positive ? result + a : result - a
-   }
-   return result
+  let result = 0
+  const positive = Math.abs(b) === b
+  for (let i = 0; i < Math.abs(b); i++) {
+    result = positive ? result + a : result - a
+  }
+  return result
 }
 console.log(multiply(50, -50))
 
-const max = array =>
-   array.reduce((acc, el) => acc > el ? acc : el)
-console.log(max([4, 1, 5, 1500, 300, -43, 76]))
+console.log([4, 1, 5, 1500, 300, -43, 76].max())
 
-const clean = array =>
-   array.reduce((acc, el) => {
-      if (el)
-         acc.push(el)
-      return acc
-   }, [])
-console.log(clean([1, undefined, null, 0, 5, 2]))
+console.log([4, 1, 5, 1500, 300, -43, 76].min())
 
-const flatten = array =>
-   array.reduce((acc, el) => acc.concat(el), [])
-console.log(flatten([[1, 2], [[3, 4]], [1, []]]))
+console.log([1, undefined, null, 0, 5, 2].clean())
 
-const repeated = str =>
-   Object
-      .entries(str.toLowerCase()
-         .split(/\s/)
-         .reduce((acc, el) => {
-               acc[el] ? acc[el]++ : acc[el] = 1
-               return acc
-            },
-            {}
-         )
-      )
-      .reduce((acc, el) => acc[1] > el[1] ? acc : el)
-console.log(repeated('This is a repeated word test this is a a'))
+console.log([[1, 2], [[3, 4]], [1, []]].flatten())
 
-const isPalindrome = str =>
-   str.replace(/\s/g, '')
-      .toLowerCase()
-   === str
-      .replace(/\s/g, '')
-      .toLowerCase()
-      .split('')
-      .reverse()
-      .join('')
-console.log(isPalindrome('Do geese see God'))
+console.log('This is a repeated word test this is a a'.repeated())
+
+console.log('Do geese see God'.isPalindrome())
+
+const myN = 53
+console.log(myN.isPrime())

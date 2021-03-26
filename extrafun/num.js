@@ -13,4 +13,11 @@ const isPrime = number => {
   return _isPrime(number)
 }
 
-console.log(isPrime(53))
+// ***************************************** Assignations ************************************************* //
+Object.assign(Number.prototype, {
+  isPrime() {
+    return isPrime(this)
+  }
+})
+
+module.exports = isPrime

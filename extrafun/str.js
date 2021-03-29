@@ -1,3 +1,6 @@
+const capitalize = str =>
+  str.charAt(0).toUpperCase() + str.slice(1)
+
 const repeated = str =>
   Object
     .entries(str.toLowerCase()
@@ -29,10 +32,14 @@ Object.assign(String.prototype, {
   },
   isPalindrome() {
     return isPalindrome(this)
+  },
+  capitalize() {
+    return capitalize(this)
   }
 })
 
 module.exports = {
   repeated,
-  isPalindrome
+  isPalindrome,
+  capitalize
 }

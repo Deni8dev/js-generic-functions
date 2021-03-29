@@ -19,6 +19,7 @@ console.log([1, undefined, null, 0, 5, 2].clean())
 console.log([[1, 2], [[3, 4]], [1, []]].flatten())
 
 console.log('This is a repeated word test this is a a'.repeated())
+console.log('this is a text with capitalized words'.split(' ').map(s => s.capitalize()).join(' '))
 
 console.log('Do geese see God'.isPalindrome())
 
